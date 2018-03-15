@@ -507,7 +507,7 @@ public class SubgraphStrategyProcessTest extends AbstractGremlinProcessTest {
 
     @Test
     @LoadGraphWith(MODERN)
-    public void shouldInvalidateTraverserRequirementsIfNecessary() throws Exception {
+    public void shouldGenerateCorrectTraversers() throws Exception {
 
         assumeThat(graph, Matchers.not(Matchers.instanceOf(RemoteGraph.class)));
 

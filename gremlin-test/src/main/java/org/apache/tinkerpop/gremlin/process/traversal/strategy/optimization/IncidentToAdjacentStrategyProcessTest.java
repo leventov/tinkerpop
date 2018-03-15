@@ -32,7 +32,6 @@ import org.junit.runner.RunWith;
 import static org.apache.tinkerpop.gremlin.LoadGraphWith.GraphData.MODERN;
 import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__.*;
 import static org.junit.Assert.*;
-import static org.junit.Assume.assumeThat;
 
 /**
  * @author Daniel Kuppitz (http://gremlin.guru)
@@ -43,8 +42,6 @@ public class IncidentToAdjacentStrategyProcessTest extends AbstractGremlinProces
     @Test
     @LoadGraphWith(MODERN)
     public void shouldInvalidateTraverserRequirementsIfNecessary() throws Exception {
-
-        assumeThat(graph, Matchers.not(Matchers.instanceOf(RemoteGraph.class)));
 
         final GraphTraversalSource itag = g.withStrategies(IncidentToAdjacentStrategy.instance());
         
